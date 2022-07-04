@@ -27,7 +27,16 @@ export const Carrito = () => {
     });
   };
 
- 
+
+  
+  const addI = (id) => {
+    Cart.forEach((item) => {
+      if (item.id === id) {
+        item.cantidad += 1;
+      }
+      setCart([...Cart]);
+    });
+  };
 
 
 
