@@ -19,6 +19,7 @@ const Nav = () => {
       <li>
         <Link to='/products'>productos</Link>
       </li>
+      {/* bug correguido */}
     </ul>
     <div className='cart' >
     <box-icon name='cart'></box-icon>
