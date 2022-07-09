@@ -38,6 +38,18 @@ export const Carrito = () => {
     });
   };
 
+  
+  const removeItem = (id) => {
+    if (window.confirm("¿Desae eliminar del carrito?")) {
+      Cart.forEach((item, index) => {
+        if (item.id === id) {
+          item.cantidad = 1;
+          Cart.splice(index, 1);
+        }
+      });
+      setCart([...Cart]);
+    }
+  };
 
 
   return (
