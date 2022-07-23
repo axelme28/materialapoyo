@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { Datacontext } from "../../context/Dataprovied";
-import { ProductsItem } from "./ProductsItem";
+import { ProductsItem } from "./productitem";
 
 export const ListProducts = () => {
   

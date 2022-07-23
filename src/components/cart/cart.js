@@ -84,6 +84,7 @@ export const Carrito = () => {
                     <box-icon
                       name="up-arrow"
                       type="solid"
+                      onClick={() => addI(Product.id)}
                     ></box-icon>
                     <p className="cantidad">{Product.cantidad}</p>
                     <box-icon
@@ -94,6 +95,8 @@ export const Carrito = () => {
                   </div>
                   <div
                     className="remove-item"
+                    onClick={() => removeItem(Product.id)}
+
                   >
                     <box-icon name="trash"></box-icon>
                   </div>

@@ -1,33 +1,48 @@
-import React from 'react';
-import Homero from '../../imgs/Homero.jpg';
-import { Link } from 'react-router-dom';
-import "boxicons";
+
+import React, { useContext } from 'react';
+import  Homero  from '../../imgs/Homero.jpg';
+import { Link } from "react-router-dom";
+import { Datacontext } from "../../context/Dataprovied";
+
+export const Nav = () => {
+
+  const value = useContext(Datacontext);
+  const [menu, setMenu] = value.menu;
+  const [Cart] = value.Cart;
+
+  const isA = () =>{
+    setMenu(!menu);
+  }
 
 
-const Nav = () => {
+
   return (
     <header>
-    <Link to='/'>
-      <div className='logo'>
-        <img src={Homero} alt='logo' width="100" height="100"></img>
+      <Link to='/'>
+        <div className='logo'>
+          <img src={Homero} alt='logo' width="100" height="100"></img>
+        </div>
+      </Link>
+      <ul>
+        <li>
+          <Link to='/'>Inicio</Link>
+        </li>
+        <li>
+          <Link to='/products'>productos</Link>
+        </li>
+      </ul>
+      <div className='' onClick={isA} style={styles.cart} >
+      <box-icon name='cart'></box-icon>
+      <span className='totalItem'>{Cart.length}</span>
       </div>
-    </Link>
-    <ul>
-      <li>
-        <Link to='/'>Inicio</Link>
-      </li>
-      <li>
-        <Link to='/products'>productos</Link>
-      </li>
-      {/* bug correguido */}
-    </ul>
-    <div className='cart' >
-    <box-icon name='cart'></box-icon>
-    <span className='totalItem'>0</span>
-    </div>
 
-  </header>
+    </header>
   )
 }
 
-export default Nav
+const styles = {
+  cart: {
+    display: "flex",
+    justifyContent: "space-betwen"
+  }
+}

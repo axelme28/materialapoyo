@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes} from 'react-router-dom'
 import {Index} from './start/index';
-import { ListProducts } from './products/index';
+import { ListProducts } from './products/product';
 
 
 
