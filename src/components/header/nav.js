@@ -30,6 +30,9 @@ export const Nav = () => {
         <li>
           <Link to='/products'>productos</Link>
         </li>
+        <li>
+          <Link to='/deatil'>Detalle de compra</Link>
+        </li>
       </ul>
       <div className='' onClick={isA} style={styles.cart} >
       <box-icon name='cart'></box-icon>

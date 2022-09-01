@@ -13,6 +13,13 @@ export const Index = () => {
         <h1> productos </h1>
       </Link>
 
+      <Link to="/detail">
+        <h1> Detalle de compra </h1>
+      </Link>
+
+      
+
+
       {/* aqui va una imagen de fondo */}
     </div>
   )
