@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { Datacontext } from "../../context/Dataprovied";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { Datacontext } from '../../context/Dataprovied';
 
 export const Detail = () => {
   const value = useContext(Datacontext);
@@ -15,8 +15,8 @@ export const Detail = () => {
     setMenu(false);
   };
 
-  const s1 = menu ? "carts show" : "carts";
-  const s2 = menu ? "cart show" : "cart";
+  const s1 = menu ? 'carts show' : 'carts';
+  const s2 = menu ? 'cart show' : 'cart';
 
   const removeI = (id) => {
     Cart.forEach((item) => {
@@ -37,7 +37,7 @@ export const Detail = () => {
   };
 
   const removeItem = (id) => {
-    if (window.confirm("¿Desae eliminar del carrito?")) {
+    if (window.confirm('¿Desae eliminar del carrito?')) {
       Cart.forEach((item, index) => {
         if (item.id === id) {
           item.cantidad = 1;
@@ -49,26 +49,25 @@ export const Detail = () => {
   };
 
   return (
-    <>
-      <div className="container-sm justify-content-center align-items-center">
+    <div className='container-sm justify-content-center align-items-center' style={{ zIndex: '1' }}>
+      <div style={{ marginTop: '10rem' }}>
         {Cart.map((Product) => (
-          <div className="cart-item" key={Product.id} >
-            <img src={Product.image} alt=""></img>
-            <div>
-              <h3>{Product.title}</h3>
-              <p> precio ${Product.price}</p>
-            </div>
-            <div>
-              <p> Cantidad {Product.cantidad}</p>
-            </div>
-            <div className="remove-item" onClick={() => removeItem(Product.id)}>
-              <box-icon name="trash"></box-icon>
+          <div class='card m-4' style={{ width: '18rems' }} key={Product.id}>
+            <img src={Product.image} class='card-img-top' alt='...' />
+            <div class='card-body'>
+              <h5 class='card-title'>{Product.title}</h5>
+              <p class='card-text'>
+                {Product.tallas} - {Product.color}
+              </p>
+              <div className='remove-item' onClick={() => removeItem(Product.id)}>
+                <box-icon name='trash'></box-icon>
+              </div>
             </div>
           </div>
         ))}
-        <h3>total: ${total}</h3>
-        <button className="btn btn-success">Finalizar compra</button>
       </div>
-    </>
+      <h3>total: ${total}</h3>
+      <button className='btn btn-success'>Finalizar compra</button>
+    </div>
   );
 };
